@@ -61,7 +61,7 @@ fun BasicText(message: String){
                 textAlign = TextAlign.Start,
                 lineHeight = 50.sp,
                 maxLines = 2,
-                overflow = TextOverflow.Ellipsis //얼립시스라고 생략이라는 뜻입니다.
+                overflow = TextOverflow.Ellipsis
             )
         }
     }
@@ -77,7 +77,7 @@ fun ShadowText(message: String){
             shadow = Shadow(
                 color = Color.Blue,
                 offset = offset,
-                blurRadius = 3f //흐리게 처리되는 정도
+                blurRadius = 3f
             )
         )
     )
@@ -117,7 +117,7 @@ fun BrushText(message: String){
     )
 }
 
-//마키(큰 천막)
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MarqueeText(message: String){
