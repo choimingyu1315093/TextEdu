@@ -8,9 +8,11 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,6 +27,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,12 +50,20 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BasicText(message: String){
     TextEduTheme {
-        Text(
-            text = message,
-            fontSize = 32.sp,
-            fontStyle = FontStyle.Italic,
-            fontWeight = FontWeight.Bold
-        )
+        Surface (
+            modifier = Modifier.fillMaxWidth()
+        ){
+            Text(
+                text = message,
+                fontSize = 32.sp,
+                fontStyle = FontStyle.Italic,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start,
+                lineHeight = 50.sp,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis //얼립시스라고 생략이라는 뜻입니다.
+            )
+        }
     }
 }
 
@@ -124,7 +136,7 @@ fun MarqueeText(message: String){
 @Composable
 fun BasicTextPreview() {
     TextEduTheme {
-        BasicText("Hello World")
+        BasicText("Hello World".repeat(10))
     }
 }
 
