@@ -105,6 +105,7 @@ fun BrushText(message: String){
     )
 }
 
+//마키(큰 천막)
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MarqueeText(message: String){
@@ -151,7 +152,7 @@ fun BrushTextPreview() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun MarqueePreview(){
     TextEduTheme {
